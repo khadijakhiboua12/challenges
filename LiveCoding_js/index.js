@@ -480,7 +480,10 @@ function calculateTotalRevenue() {
 // CHALLENGE 5: Find a user by their email address
 // RESTRICTION use Only for, while, and standard logic.
 function findUserByEmail(email) {
-       
+         for(let i=0;i<spaceData.users.length;i++){
+              if(spaceData.users.email===email)
+                       return spaceData.users;
+         }
        
 }
 
@@ -521,17 +524,25 @@ console.log("le max prix d'un bookig est ",findMostExpensiveBooking());
 function getBookingSummary() {
     // We want to make each booking simpler - just show:
     // id, destination, number of passengers, and total price
-     
-    
+        let tab=[];
+       for(let i=0;i<spaceData.bookings.length;i++){
+          tab+=spaceData.bookings[i].id;
+          tab+=spaceData.bookings[i].destination;
+          tab+=spaceData.bookings[i].passengers;
+          tab+=spaceData.bookings[i].totalPrice;
+       }
+       
+       return tab;
+       
 }
+console.log(getBookingSummary());
 
 // CHALLENGE 10: Update a booking's status
 // RESTRICTION use Only for, while, and standard logic.
 function updateBookingStatus(bookingId, newStatus) {
-    
-    
+      
 }
-
+updateBookingStatus(1,"ghjk");
 
 // CHALLENGE 11: Calculate how much money each destination has made
 // RESTRICTION use Only for, while, and standard logic.
